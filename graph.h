@@ -11,6 +11,8 @@ typedef struct edge {
     char *relationship; /* node1 <- relationship -> node2 */
 } Edge;
 
+int inspect(Node *node);
+Node *new_node( char *key, char *val );
 
 
 
