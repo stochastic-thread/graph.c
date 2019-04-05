@@ -8,12 +8,14 @@ Node *new_node( char *key, char *val ) {
     return node;
 };
 
-int print_node_info(Node *node)
+int inspect(Node *node)
 {
-    printf("Node key: ");
-    puts(node->label);
-    printf("Node val: \n");
-    puts(node->value);
+    printf("\n\{ 'label': \"");
+    fputs(node->label, stdout);
+    printf("\",");
+    printf("'value': \"");
+    fputs(node->value, stdout);
+    printf("\"\}");
     return 0;
 }
 
@@ -24,7 +26,7 @@ int main( int argc, const char* argv[] )
     gets(k);
     gets(v);
     Node *node = new_node(k, v);
-    int succ = print_node_info(node);
+    int succ = inspect(node);
     return 0;
 }
 
